@@ -6,7 +6,7 @@ module.exports = function(app) {
   });
 
 
-  app.post("/api/fiends", function(req, res) {
+  app.post("/api/friends", function(req, res) {
       var userInput = req.body;
     
       for(var i = 0; i < userInput.scores.length; i++) {
@@ -32,7 +32,7 @@ module.exports = function(app) {
       }
   
       // after finding match, add user to friend array
-      friends.push(user);
+      friends.push(userInput);
   
       // send back to browser the best friend match
       res.json(friends[bestFriendIndex]);
